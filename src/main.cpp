@@ -1,5 +1,6 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+// For Apple Silicon Mac
 #include <vulkan/vulkan_beta.h>
 
 #include <algorithm>
@@ -24,7 +25,7 @@ const std::vector<const char *> validationLayers = {
 
 const std::vector<const char *> deviceExtensions = {
     VK_KHR_SWAPCHAIN_EXTENSION_NAME,
-    // For Apple Silcon Mac
+    // For Apple Silicon Mac
     VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME};
 
 #ifdef NDEBUG
@@ -201,6 +202,7 @@ private:
     createInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
     createInfo.ppEnabledExtensionNames = extensions.data();
 
+    // For Apple Silicon Mac
     createInfo.flags |= VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
 
     VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo{};
