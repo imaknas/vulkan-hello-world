@@ -32,5 +32,6 @@
 *.app
 
 .cache
+bin
 build
 *.spv

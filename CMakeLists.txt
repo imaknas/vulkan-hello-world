@@ -3,6 +3,7 @@ project(HelloWorld)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # ------------------------------------------------------------------------------
 # Vulkan (assumes environment variable VULKAN_SDK is set correctly)
